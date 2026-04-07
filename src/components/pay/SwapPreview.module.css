@@ -1,0 +1,33 @@
+.wrap {
+  background: var(--purple-dim);
+  border: 1px solid #7C5CFC30;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--purple);
+  margin-bottom: 8px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: #A98BFD;
+}
+
+.row strong { color: white; }
+
+.arrow { color: var(--purple); }
+
+.note {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}

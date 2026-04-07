@@ -1,0 +1,80 @@
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: rgba(7,9,14,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: -0.5px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+  display: inline-block;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dashBtn, .logoutBtn, .loginBtn {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding: 7px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Outfit', sans-serif;
+}
+
+.dashBtn:hover, .loginBtn:hover {
+  color: var(--text);
+  background: var(--card);
+}
+
+.logoutBtn:hover {
+  color: var(--error);
+  background: var(--error-dim);
+}
+
+.createBtn {
+  background: var(--accent);
+  color: #07090E;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Outfit', sans-serif;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.createBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 32px var(--accent-glow);
+}

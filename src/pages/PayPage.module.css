@@ -1,0 +1,22 @@
+.inner {
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.payWrap {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.poweredBy {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.poweredBy strong { color: var(--accent); }

@@ -1,0 +1,40 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.paid {
+  background: #00C89618;
+  color: var(--accent);
+  border: 1px solid #00C89630;
+}
+
+.pending {
+  background: var(--pending-dim);
+  color: var(--pending);
+  border: 1px solid #F59E0B30;
+}
+
+.expired {
+  background: var(--error-dim);
+  color: var(--error);
+  border: 1px solid #EF444430;
+}
+
+.partial {
+  background: var(--purple-dim);
+  color: var(--purple);
+  border: 1px solid #7C5CFC30;
+}
