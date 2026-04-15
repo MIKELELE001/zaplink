@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { usePrivy } from '@privy-io/react-auth';
+import { usePrivy, useWallets } from '@privy-io/react-auth';
 import TokenSelector from './TokenSelector';
 import SplitToggle from './SplitToggle';
-import { createLink } from '@/services/links';
-import type { TokenSymbol, ExpiryOption } from '@/types';
+import { createLink } from '../services/links';
+import type { TokenSymbol, ExpiryOption } from '../types';
 import styles from './CreateLinkForm.module.css';
 
 const EXPIRY_OPTIONS: { label: string; value: ExpiryOption }[] = [
@@ -16,6 +16,7 @@ const EXPIRY_OPTIONS: { label: string; value: ExpiryOption }[] = [
 
 export default function CreateLinkForm() {
   const { user } = usePrivy();
+  const { wallets } = useWallets();
   const navigate = useNavigate();
 
   const [amount, setAmount] = useState('');
@@ -27,7 +28,7 @@ export default function CreateLinkForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const walletAddress = user?.wallet?.address ?? '';
+  const walletAddress = wallets[0]?.address ?? user?.id ?? '';
 
   const handleSubmit = async () => {
     if (!amount || parseFloat(amount) <= 0) {
@@ -35,7 +36,7 @@ export default function CreateLinkForm() {
       return;
     }
     if (!walletAddress) {
-      setError('Wallet not connected');
+      setError('Please sign in first');
       return;
     }
 
@@ -85,7 +86,9 @@ export default function CreateLinkForm() {
       </div>
 
       <div className={styles.group}>
-        <label className={styles.label}>Note <span className={styles.optional}>(optional)</span></label>
+        <label className={styles.label}>
+          Note <span className={styles.optional}>(optional)</span>
+        </label>
         <input
           className={styles.input}
           type="text"
